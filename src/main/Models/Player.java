@@ -5,8 +5,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class BoardCell {
-    private int row;
-    private int column;
+@SuperBuilder(toBuilder = true)
+public abstract class Player {
     private Symbol gameSymbol;
+    public abstract BoardCell makeMove(Board board);
 }
